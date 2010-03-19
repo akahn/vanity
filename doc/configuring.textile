@@ -18,4 +18,12 @@ Configuration options are:
 | load_path   | Directory containing experiment files | experiments    |
 | logger      | This should be obvious                | default/Rails  |
 
-When "running under Rails":rails.html, Vanity defaults to using the Rails logger, locates the load_path relative to Rails root and will use the @config/redis.yml@ configuration file, if present.
+When "running under Rails":rails.html, Vanity defaults to using the Rails logger, locates the load_path relative to Rails root and will use the @config/redis.yml@ configuration file, if present. Your @config/redis.yml@ file should follow this model:
+
+<pre>
+development:
+  "localhost:6379"
+
+production:
+  "redis.example.com:6379"
+</pre>
